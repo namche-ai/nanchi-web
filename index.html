@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7fbfc">
+  <meta name="description" content="南驰科技面向具有复杂报价、订单、审核和履约流程的成长型企业，提供 AI 场景诊断、Agent 建设、OrchestraX 协同平台与持续运营服务。">
+  <meta property="og:title" content="南驰科技｜企业 AI 应用落地与 OrchestraX 协同平台">
+  <meta property="og:description" content="让 AI 走进日常经营，带来可验证的业务结果。">
+  <meta property="og:image" content="assets/images/namche-og.png">
+  <title>南驰科技｜企业 AI 应用落地与 OrchestraX 协同平台</title>
+  <link rel="icon" type="image/png" href="assets/images/brand/namche-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-demand" viewBox="0 0 24 24"><path d="M5 4h10v16H5zM9 8h8m-8 4h8"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><path d="M8 5a4 4 0 0 1 8 0c2 1 3 2.5 3 4.5 0 1.2-.4 2.3-1.2 3.2.1.4.2.9.2 1.3a4 4 0 0 1-6 3.5A4 4 0 0 1 6 14c0-.5.1-.9.2-1.3A4.5 4.5 0 0 1 8 5Z"/><path d="M9 10h6m-4-3 2 6"/></symbol>
+    <symbol id="i-rules" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/></symbol>
+    <symbol id="i-human" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M5 20c.7-4 3-6 7-6s6.3 2 7 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 10 7-10 7V5Z"/></symbol>
+    <symbol id="i-record" viewBox="0 0 24 24"><path d="M6 3h10l3 3v15H6V3Z"/><path d="M9 11h7m-7 4h5M15 3v4h4"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 96 84"><path d="M24 67h45M30 62V22h31l8 8v32M61 22v10h9M37 40h25M37 47h18"/><circle cx="27" cy="58" r="14"/><path d="M22 53c2-2 7-2 9 0 2 2-1 3-4 4-4 1-6 2-4 4 2 2 7 2 9 0M27 49v16"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 96 84"><path d="M18 25h11l6 30h35l7-22H34"/><circle cx="41" cy="64" r="4"/><circle cx="67" cy="64" r="4"/><path d="M45 24v20m-8-12h17M59 25h13l6 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 96 84"><path d="M48 13 73 23v18c0 16-9 25-25 31-16-6-25-15-25-31V23l25-10Z"/><path class="accent-stroke" d="m36 42 8 8 17-20"/></symbol>
+    <symbol id="i-network" viewBox="0 0 96 84"><path d="M19 29 48 13l29 16v31L48 76 19 60V29Zm0 0 29 16 29-16M48 45v31"/><circle cx="19" cy="29" r="4"/><circle cx="77" cy="29" r="4"/><circle cx="48" cy="76" r="4"/><circle cx="48" cy="13" r="4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m7.5 12 3 3 6-7"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="site-width header-layout">
+      <a class="brand brand-image" href="#top" aria-label="南驰科技首页">
+        <img src="assets/images/brand/namche-lockup-horizontal.png" alt="南驰科技 Namche">
+      </a>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#orchestrax">OrchestraX</a><a href="#solutions">AI解决方案</a><a href="#cases">客户案例</a><a href="#about">关于南驰</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-demo" type="button" data-open-demo>预约场景诊断</button>
+        <button class="mobile-menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button><svg><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" aria-label="移动端导航" data-mobile-nav>
+      <a href="#orchestrax">OrchestraX <span>→</span></a><a href="#solutions">AI解决方案 <span>→</span></a><a href="#cases">客户案例 <span>→</span></a><a href="#about">关于南驰 <span>→</span></a><button type="button" data-open-demo>预约场景诊断 <span>→</span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="page-hero hero-split">
+      <div class="site-width hero-split-grid">
+        <div class="hero-split-copy">
+          <h1>让 AI 走进<br>日常经营</h1>
+          <p class="hero-product">OrchestraX AI 业务协同平台</p>
+          <p class="hero-subline">从报价、订单、审核到履约，把 Agent、规则、人和现有系统连接成业务闭环。</p>
+          <div class="hero-split-actions">
+            <button class="action action-solid" type="button" data-open-demo>预约场景诊断 <svg><use href="#i-arrow"/></svg></button>
+            <a class="action action-outline" href="#orchestrax">了解 OrchestraX <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="hero-split-visual" aria-label="OrchestraX 业务协同流程视觉">
+          <img src="assets/images/hero-banner-reference.png" width="1731" height="909" fetchpriority="high" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="section scenario-section" id="solutions">
+      <div class="site-width">
+        <div class="section-lead center reveal"><span class="section-label">AI 解决方案</span><h2>从一个高价值场景开始</h2><p>优先选择高频、高人力、规则相对清晰且数据可获得的业务环节，用小范围试点验证价值，再逐步扩展。</p></div>
+        <div class="scenario-row reveal">
+          <article><div class="scenario-visual"><svg><use href="#i-quote"/></svg></div><h3>AI 智能报价</h3><p>理解客户需求，匹配产品、价格、加工与成本规则，生成可追溯的报价草稿。</p><a class="text-action" href="#orchestrax">了解协同方式 <svg><use href="#i-arrow"/></svg></a></article>
+          <article><div class="scenario-visual"><svg><use href="#i-cart"/></svg></div><h3>AI 智能下单</h3><p>把聊天、图片、表格和采购单中的需求，转成经过规则校验的结构化订单草稿。</p><a class="text-action" href="#orchestrax">了解协同方式 <svg><use href="#i-arrow"/></svg></a></article>
+          <article><div class="scenario-visual"><svg><use href="#i-shield"/></svg></div><h3>AI 智能审核</h3><p>识别价格、资质、信用、库存与配送约束，标准场景自动处理，复杂场景精准转人工。</p><a class="text-action" href="#orchestrax">了解协同方式 <svg><use href="#i-arrow"/></svg></a></article>
+          <article><div class="scenario-visual"><svg><use href="#i-network"/></svg></div><h3>AI 履约协同</h3><p>连接订单、库存、物流与配送计划，协同催货、预约、改期和异常处理。</p><a class="text-action" href="#orchestrax">了解协同方式 <svg><use href="#i-arrow"/></svg></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section platform-section" id="orchestrax">
+      <div class="site-width platform-grid">
+        <div class="platform-copy reveal">
+          <div class="section-lead"><span class="section-label">OrchestraX AI 业务协同平台</span><h2>把 AI 建议接入真实业务执行</h2><p>OrchestraX 位于动态业务需求与结构化交易系统之间，统一承接任务、规则、人工确认和系统动作。</p></div>
+          <div class="platform-points"><span>多场景 Agent 接入</span><span>业务规则与确定性计算</span><span>人工确认与责任边界</span><span>ERP、OMS、WMS 系统连接</span></div>
+          <a class="text-action" href="#flow-detail">理解运行逻辑 <svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="orchestration-map reveal" id="flow-detail" aria-label="OrchestraX 业务协同链路示意图">
+          <svg class="map-paths" viewBox="0 0 620 470" preserveAspectRatio="none"><defs><linearGradient id="path-color" x1="0" x2="1"><stop stop-color="#79cbd0"/><stop offset=".5" stop-color="#0aafb5"/><stop offset="1" stop-color="#69aee0"/></linearGradient></defs><path d="M140 84C210 120 230 168 310 235M480 84C410 120 390 168 310 235M135 384C205 345 235 300 310 235M485 384C415 345 385 300 310 235"/></svg>
+          <div class="map-node node-agent"><strong>业务 Agent</strong><span>理解需求与生成建议</span></div>
+          <div class="map-node node-rules"><strong>规则与数据</strong><span>确定性计算与依据</span></div>
+          <div class="map-core"><div><strong>OrchestraX</strong><span>协同运行中枢</span></div></div>
+          <div class="map-node node-human"><strong>人工确认</strong><span>关键节点责任边界</span></div>
+          <div class="map-node node-system"><strong>现有系统</strong><span>ERP / OMS / WMS</span></div>
+          <small>业务协同链路示意图</small>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section value-section value-section-v2">
+      <div class="site-width">
+        <div class="section-lead reveal">
+          <span class="section-label">经营价值</span>
+          <h2>把 AI 价值落到三本经营账</h2>
+          <p>不只计算节省了多少时间，也验证收入、成本和费用是否得到真实改善。</p>
+        </div>
+        <div class="value-stage reveal">
+          <div class="value-compass" aria-label="收入、成本、费用共同指向可衡量的经营结果">
+            <svg class="value-orbits" viewBox="0 0 500 500" aria-hidden="true">
+              <defs><linearGradient id="value-path" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75cbd0"/><stop offset=".5" stop-color="#09afb5"/><stop offset="1" stop-color="#4d8fbd"/></linearGradient></defs>
+              <circle cx="250" cy="250" r="205"/>
+              <circle cx="250" cy="250" r="145" stroke-dasharray="4 8"/>
+              <path d="M250 64V158M84 350l83-48M416 350l-83-48"/>
+            </svg>
+            <div class="value-core"><strong>经营结果</strong><span>可衡量 · 可复核</span></div>
+            <div class="value-node value-node-revenue"><b>收入</b><span>增长</span></div>
+            <div class="value-node value-node-cost"><b>成本</b><span>优化</span></div>
+            <div class="value-node value-node-expense"><b>费用</b><span>下降</span></div>
+          </div>
+          <div class="value-outcomes">
+            <article class="value-outcome">
+              <span class="value-no">01</span>
+              <div><small>收入</small><h3>提升订单承接</h3><p>提高商机转化、促销命中与渠道响应，让策略更快进入真实交易。</p><em>验证指标：转化率、促销命中、响应时效</em></div>
+            </article>
+            <article class="value-outcome">
+              <span class="value-no">02</span>
+              <div><small>成本</small><h3>优化履约决策</h3><p>连接采购、库存、生产与物流，让业务判断更及时、更可执行。</p><em>验证指标：库存周转、交付时效、异常占比</em></div>
+            </article>
+            <article class="value-outcome">
+              <span class="value-no">03</span>
+              <div><small>费用</small><h3>减少重复劳动</h3><p>减少报价、制单、审核与对账，把人力投入客户与异常处理。</p><em>验证指标：人工处理率、单据耗时、返工率</em></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-section" id="service">
+      <div class="site-width">
+        <div class="section-lead center reveal">
+          <span class="section-label">服务方式</span>
+          <h2>从一个场景开始，逐步进入日常经营</h2>
+          <p>先验证业务价值，再连接更多系统、角色和场景，逐步沉淀企业自己的 AI 应用能力。</p>
+        </div>
+        <div class="service-steps reveal">
+          <article class="service-step"><span class="service-step-number">01</span><h3>场景诊断</h3><p>梳理业务目标与高频痛点，识别可快速落地的业务条件。</p></article>
+          <article class="service-step"><span class="service-step-number">02</span><h3>共创工作坊</h3><p>管理层共识与场景共创，形成分阶段的业务路线图。</p></article>
+          <article class="service-step"><span class="service-step-number">03</span><h3>POC 建设</h3><p>快速搭建原型，用真实数据验证业务价值与落地边界。</p></article>
+          <article class="service-step"><span class="service-step-number">04</span><h3>试点上线</h3><p>在小范围真实运行中收集反馈，持续调整与优化。</p></article>
+          <article class="service-step"><span class="service-step-number">05</span><h3>持续运营</h3><p>扩展更多场景与系统，形成企业自己的 AI 应用能力。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cases-section cases-section-v2" id="cases">
+      <div class="site-width">
+        <div class="section-lead center reveal">
+          <span class="section-label">客户案例</span>
+          <h2>真实业务结果，比技术概念更有说服力</h2>
+          <p>以真实客户、真实流程和可验证指标，说明 AI 如何从概念进入企业日常经营。</p>
+        </div>
+        <div class="case-card-grid reveal">
+          <article class="case-card-v2" id="case-byhealth">
+            <figure class="case-card-media">
+              <img src="assets/images/case-byhealth-allocation.jpg" width="1672" height="941" loading="lazy" alt="汤臣倍健 AI 预测调拨流程图">
+            </figure>
+            <div class="case-card-body">
+              <h3>汤臣倍健</h3>
+              <p class="case-scene">AI 预测调拨</p>
+              <dl class="case-metrics">
+                <div><dt>履约率</dt><dd><span>51.3%</span><b>→</b><strong>71.3%</strong></dd></div>
+                <div><dt>物流费用</dt><dd class="metric-single"><strong>约减少 10 万元/月</strong></dd></div>
+              </dl>
+            </div>
+          </article>
+          <article class="case-card-v2" id="case-kuka">
+            <figure class="case-card-media">
+              <img src="assets/images/case-kuka-dingtalk-fulfillment.jpg" width="1672" height="941" loading="lazy" alt="顾家家居钉钉 AI 履约流程图">
+            </figure>
+            <div class="case-card-body">
+              <h3>顾家家居</h3>
+              <p class="case-scene">钉钉 AI 履约</p>
+              <dl class="case-metrics">
+                <div><dt>完美订单率</dt><dd><span>30%</span><b>→</b><strong>90%</strong></dd></div>
+                <div><dt>转人工率</dt><dd class="metric-single"><strong>&lt;10%</strong></dd></div>
+              </dl>
+            </div>
+          </article>
+          <article class="case-card-v2" id="case-xilong" data-case="xilong">
+            <figure class="case-card-media">
+              <img src="assets/images/case-xilong-ordering.jpg" width="1672" height="941" loading="lazy" alt="西陇化工 AI 订单与制单流程图">
+            </figure>
+            <div class="case-card-body">
+              <h3>西陇化工</h3>
+              <p class="case-scene">AI 订单与制单</p>
+              <dl class="case-metrics">
+                <div><dt>制单耗时</dt><dd><span>15min</span><b>→</b><strong>&lt;3min</strong></dd></div>
+                <div><dt>错误率</dt><dd><span>18%</span><b>→</b><strong>&lt;5%</strong></dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+        <p class="case-disclaimer reveal">指标来自项目材料。配图为 AI 场景流程示意图。</p>
+      </div>
+    </section>
+
+    <section class="final-cta-wrap"><div class="site-width final-cta reveal"><div><h2>先找到最值得验证的 AI 场景</h2><p>用一次场景诊断，梳理业务目标、流程、数据、规则和优先级，确定第一阶段验证范围。</p></div><button class="action action-solid" type="button" data-open-demo>预约场景诊断 <svg><use href="#i-arrow"/></svg></button></div></section>
+  </main>
+
+  <footer class="site-footer" id="about">
+    <div class="site-width footer-layout">
+      <div class="footer-statement"><a class="brand brand-image" href="#top" aria-label="返回首页"><img src="assets/images/brand/namche-lockup-horizontal.png" alt="南驰科技 Namche"></a><p>让 AI 走进日常经营，带来可验证的业务结果。</p><small>企业 AI 应用落地与数智化转型服务商</small></div>
+      <div class="footer-column"><strong>产品与方案</strong><a href="#orchestrax">OrchestraX</a><a href="#solutions">AI解决方案</a><button type="button" data-open-demo>预约场景诊断</button></div>
+      <div class="footer-column"><strong>南驰科技</strong><a href="#cases">客户案例</a><a href="#about">关于南驰</a></div>
+    </div>
+    <div class="site-width footer-legal"><span>© 2026 广州南驰信息科技有限公司</span><span>ICP备案号：粤ICP备2025463344号</span></div>
+  </footer>
+
+  <div class="modal-backdrop" data-modal>
+    <div class="demo-dialog" role="dialog" aria-modal="true" aria-labelledby="demo-title" tabindex="-1" data-dialog>
+      <button class="dialog-close" type="button" aria-label="关闭弹窗" data-close-demo><svg><use href="#i-close"/></svg></button>
+      <div data-form-content>
+        <div class="dialog-heading"><span>60 分钟初步场景访谈</span><h2 id="demo-title">预约 AI 应用场景诊断</h2><p>梳理业务目标与高频痛点，形成候选场景、优先级和下一步建议。</p></div>
+        <form class="demo-form" data-demo-form>
+          <label><span>姓名 *</span><input name="name" autocomplete="name" required placeholder="请输入姓名"></label><label><span>公司名称 *</span><input name="company" autocomplete="organization" required placeholder="请输入公司名称"></label>
+          <label><span>手机或微信 *</span><input name="contact" autocomplete="tel" required placeholder="请输入联系方式"></label><label><span>职位</span><input name="role" autocomplete="organization-title" placeholder="例如：销售运营负责人"></label>
+          <label><span>希望改善的场景 *</span><select name="scene" required><option value="">请选择场景</option><option>报价</option><option>下单</option><option>审核</option><option>履约</option><option>费用对账</option><option>其他</option></select></label><label><span>当前业务系统</span><input name="systems" placeholder="例如：ERP、OMS、WMS、钉钉"></label>
+          <label class="form-wide"><span>补充说明</span><textarea name="note" rows="3" placeholder="简单描述当前流程、痛点或希望达成的结果"></textarea></label><label class="consent form-wide"><input type="checkbox" required><span>我同意南驰科技仅将这些信息用于本次业务沟通。</span></label>
+          <button class="action action-solid form-submit" type="submit">提交预约 <svg><use href="#i-arrow"/></svg></button>
+        </form>
+      </div>
+      <div class="form-success" data-success><div><svg><use href="#i-check"/></svg></div><h2>预约已收到</h2><p>我们会尽快与你联系，进一步确认业务场景。当前页面为前端演示，正式上线前需接入表单接收接口。</p><button class="action action-solid" type="button" data-close-demo>知道了</button></div>
+    </div>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>
+
+
+
+
+
+

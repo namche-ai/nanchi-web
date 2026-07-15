@@ -1,0 +1,10 @@
+/* Desktop hero proportions aligned with the confirmed visual. */
+@media (min-width: 1121px) {
+  .hero-grid { grid-template-columns: minmax(520px, 1fr) minmax(560px, 1.05fr); gap: 56px; }
+  .hero-copy { max-width: 680px; }
+  .hero-copy h1 { font-size: 60px; line-height: 1.15; }
+}
+@media (min-width: 921px) and (max-width: 1120px) {
+  .hero-grid { grid-template-columns: minmax(440px, .95fr) minmax(470px, 1.05fr); gap: 38px; }
+  .hero-copy h1 { font-size: 52px; }
+}

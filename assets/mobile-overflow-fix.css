@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+  .case-card-media {
+    height: auto;
+  }
+
+  .cases-section-v2 .section-lead h2 {
+    white-space: normal;
+  }
+}

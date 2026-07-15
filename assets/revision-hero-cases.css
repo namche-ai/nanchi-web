@@ -1,0 +1,8 @@
+@import url("revision-hero-cases-v1.css");
+
+#cases { scroll-margin-top: 90px; }
+@media (min-width: 1081px) {
+  .featured-case { grid-template-columns: minmax(0, 1.3fr) minmax(440px, .7fr); }
+  .featured-case-copy { padding-inline: 42px; }
+  .featured-case-copy h3 { font-size: 36px; }
+}
