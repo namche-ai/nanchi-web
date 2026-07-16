@@ -222,15 +222,18 @@
       <button class="dialog-close" type="button" aria-label="关闭弹窗" data-close-demo><svg><use href="#i-close"/></svg></button>
       <div data-form-content>
         <div class="dialog-heading"><span>60 分钟初步场景访谈</span><h2 id="demo-title">预约 AI 应用场景诊断</h2><p>梳理业务目标与高频痛点，形成候选场景、优先级和下一步建议。</p></div>
-        <form class="demo-form" data-demo-form>
+        <form class="demo-form" data-demo-form novalidate>
           <label><span>姓名 *</span><input name="name" autocomplete="name" required placeholder="请输入姓名"></label><label><span>公司名称 *</span><input name="company" autocomplete="organization" required placeholder="请输入公司名称"></label>
           <label><span>手机或微信 *</span><input name="contact" autocomplete="tel" required placeholder="请输入联系方式"></label><label><span>职位</span><input name="role" autocomplete="organization-title" placeholder="例如：销售运营负责人"></label>
           <label><span>希望改善的场景 *</span><select name="scene" required><option value="">请选择场景</option><option>报价</option><option>下单</option><option>审核</option><option>履约</option><option>费用对账</option><option>其他</option></select></label><label><span>当前业务系统</span><input name="systems" placeholder="例如：ERP、OMS、WMS、钉钉"></label>
-          <label class="form-wide"><span>补充说明</span><textarea name="note" rows="3" placeholder="简单描述当前流程、痛点或希望达成的结果"></textarea></label><label class="consent form-wide"><input type="checkbox" required><span>我同意南驰科技仅将这些信息用于本次业务沟通。</span></label>
-          <button class="action action-solid form-submit" type="submit">提交预约 <svg><use href="#i-arrow"/></svg></button>
+          <label class="form-wide"><span>补充说明</span><textarea name="note" rows="3" placeholder="简单描述当前流程、痛点或希望达成的结果"></textarea></label>
+          <label class="form-honeypot" aria-hidden="true"><span>网站</span><input name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="consent form-wide"><input type="checkbox" name="consent" required><span>我同意南驰科技仅将这些信息用于本次业务沟通。</span></label>
+          <p class="form-error form-wide" role="alert" data-form-error hidden></p>
+          <button class="action action-solid form-submit" type="submit"><span data-submit-label>提交预约</span> <svg><use href="#i-arrow"/></svg></button>
         </form>
       </div>
-      <div class="form-success" data-success><div><svg><use href="#i-check"/></svg></div><h2>预约已收到</h2><p>我们会尽快与你联系，进一步确认业务场景。当前页面为前端演示，正式上线前需接入表单接收接口。</p><button class="action action-solid" type="button" data-close-demo>知道了</button></div>
+      <div class="form-success" data-success><div><svg><use href="#i-check"/></svg></div><h2>预约已收到</h2><p>信息已安全提交，我们会尽快与你联系，进一步确认业务场景。</p><button class="action action-solid" type="button" data-close-demo>知道了</button></div>
     </div>
   </div>
   <script src="assets/site.js"></script>

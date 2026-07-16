@@ -5,3 +5,8 @@ Thumbs.db
 *.log
 playwright-report/
 test-results/
+deploy/.env.leads
+deploy/.ssh/
+server/data/
+server/*.db*
+server/*.csv

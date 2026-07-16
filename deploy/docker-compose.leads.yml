@@ -1,0 +1,24 @@
+services:
+  lead-api:
+    build:
+      context: ../server
+    container_name: namche-lead-api
+    restart: unless-stopped
+    env_file:
+      - .env.leads
+    volumes:
+      - namche-leads-data:/data
+    ports:
+      - "127.0.0.1:8787:8787"
+    networks:
+      - namche-leads-network
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  namche-leads-data:
+    name: namche-leads-data
+
+networks:
+  namche-leads-network:
+    name: namche-leads-network

@@ -12,7 +12,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/deploy.sh [--allow-dirty]
 
-Deploy the static Namche website to production.
+Deploy the Namche website and lead API to production.
 
 Environment overrides:
   REMOTE                  SSH target. Default: root@47.115.58.5
@@ -52,8 +52,9 @@ need_cmd() {
 }
 
 need_cmd git
-need_cmd rsync
 need_cmd ssh
+need_cmd scp
+need_cmd tar
 need_cmd curl
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
@@ -73,26 +74,51 @@ COMMIT="$(git rev-parse --short=12 HEAD)"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 TIMESTAMP="$(date +%Y%m%d%H%M%S)"
 REMOTE_RELEASE_DIR="/tmp/namche-web-release-${TIMESTAMP}-${COMMIT}"
+REMOTE_ARCHIVE="/tmp/namche-web-${TIMESTAMP}-${COMMIT}.tar.gz"
 REMOTE_BACKUP_DIR="/root/deploy-backups/namche-web-${TIMESTAMP}"
+STATIC_ARCHIVE="$(mktemp)"
 CHECK_FILE="$(mktemp)"
+SSH_STATE_DIR="$REPO_ROOT/deploy/.ssh"
+KNOWN_HOSTS_FILE="$SSH_STATE_DIR/known_hosts"
+mkdir -p "$SSH_STATE_DIR"
+
+SSH_ARGS=(
+  -o "UserKnownHostsFile=$KNOWN_HOSTS_FILE"
+  -o StrictHostKeyChecking=accept-new
+)
+if [[ -n "${DEPLOY_SSH_KEY:-}" ]]; then
+  SSH_ARGS+=( -i "$DEPLOY_SSH_KEY" )
+elif [[ -f "$SSH_STATE_DIR/namche_deploy" ]]; then
+  SSH_ARGS+=( -i "$SSH_STATE_DIR/namche_deploy" )
+fi
 
 cleanup() {
-  rm -f "$CHECK_FILE"
+  rm -f "$STATIC_ARCHIVE" "$CHECK_FILE"
 }
 trap cleanup EXIT
 
 echo "Deploying ${BRANCH}@${COMMIT} to ${REMOTE}:${REMOTE_STATIC_DIR}"
 
-ssh "$REMOTE" "set -e
+# Publish and verify the API before exposing the form that depends on it.
+REMOTE="$REMOTE" \
+REMOTE_NGINX_CONTAINER="$REMOTE_NGINX_CONTAINER" \
+SITE_URL="$SITE_URL" \
+DEPLOY_SSH_KEY="${DEPLOY_SSH_KEY:-}" \
+  "$REPO_ROOT/scripts/deploy-leads.sh"
+
+tar -czf "$STATIC_ARCHIVE" index.html assets
+
+ssh "${SSH_ARGS[@]}" "$REMOTE" "set -e
 mkdir -p '$REMOTE_RELEASE_DIR' '$REMOTE_BACKUP_DIR'
 if [ -d '$REMOTE_STATIC_DIR' ]; then
   cp -a '$REMOTE_STATIC_DIR' '$REMOTE_BACKUP_DIR/static'
 fi
 "
 
-rsync -az --delete index.html assets/ "$REMOTE:$REMOTE_RELEASE_DIR/"
+scp "${SSH_ARGS[@]}" "$STATIC_ARCHIVE" "$REMOTE:$REMOTE_ARCHIVE"
 
-ssh "$REMOTE" "set -e
+ssh "${SSH_ARGS[@]}" "$REMOTE" "set -e
+tar -xzf '$REMOTE_ARCHIVE' -C '$REMOTE_RELEASE_DIR'
 mkdir -p '$REMOTE_STATIC_DIR'
 rsync -a --delete '$REMOTE_RELEASE_DIR/' '$REMOTE_STATIC_DIR/'
 printf '%s\n' \
@@ -100,7 +126,7 @@ printf '%s\n' \
   'branch=$BRANCH' \
   'deployed_at=$TIMESTAMP' \
   > '$REMOTE_STATIC_DIR/.deploy-info'
-rm -rf '$REMOTE_RELEASE_DIR'
+rm -rf '$REMOTE_RELEASE_DIR' '$REMOTE_ARCHIVE'
 docker exec '$REMOTE_NGINX_CONTAINER' nginx -t
 docker exec '$REMOTE_NGINX_CONTAINER' nginx -s reload
 "
